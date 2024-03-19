@@ -1,6 +1,6 @@
 package dio.diospringsecurityjwt.security;
 
-import jakarta.servlet.Servlet;
+
 import org.h2.server.web.WebServlet;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -51,10 +51,11 @@ public class WebSecurityConfig {
         return http.build();
     }
 
-    @Bean //HABILITANDO ACESSAR O H2-DATABSE NA WEB
-    public ServletRegistrationBean h2servletRegistration(){
-        ServletRegistrationBean registrationBean = new ServletRegistrationBean((Servlet) new WebServlet());
-        registrationBean.addUrlMappings("/h2-console/*");
-        return registrationBean;
-    }
+    //@Bean //HABILITANDO ACESSAR O H2-DATABSE NA WEB
+    //public ServletRegistrationBean h2servletRegistration() {
+        //ServletRegistrationBean registration = new ServletRegistrationBean(new WebServlet());
+        //registration.addUrlMappings("/console/*");
+        //registration.addInitParameter("webAllowOthers", "true");
+        //return registration;
+    //}
 }
